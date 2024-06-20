@@ -17,7 +17,7 @@ function solveEquation(a, b, c) {
 }
 console.log(solveEquation(1, 5, 4))
 
-// Задача 2
+//Задача 2
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 	if (typeof percent !== "number" || typeof contribution !== "number" || typeof amount !== "number" || typeof countMonths !== "number") {
