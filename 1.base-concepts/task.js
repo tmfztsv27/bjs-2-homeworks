@@ -31,3 +31,4 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 
 	return parseFloat(totalAmount.toFixed(2));
 }
+console.log (calculateTotalMortgage(10, 0, 50000, 12))
