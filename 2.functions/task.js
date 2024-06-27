@@ -12,7 +12,7 @@ function getArrayParams(...arr) {
     const min = Math.min(...arr);
     const max = Math.max(...arr);
     const avg = arr.reduce((acc, val) => acc + val, 0) / arr.length;
-    const avgRounded = Math.round(avg * 100) / 100;
+    const avgRounded = +avg.toFixed(2);
 
     return {
         min: min,
