@@ -1,26 +1,26 @@
 //Задача 1
 
-function getArrayParams(arr) {
-    let min, max, sum, avg;
-    min = Infinity;
-    max = -Infinity;
-  
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > max) {
-            max = arr[i]
-        }
-        else if (arr[i] < min) {
-            min = arr[i]
-        }
-            sum = arr[i];
-            avg = min + max + sum / 3;
-            avg.toFixed();
-            avg = Number(avg);
+function getArrayParams(...arr) {
+    if (arr.length === 0) {
+        return {
+            min: undefined,
+            max: undefined,
+            avg: undefined
+        };
     }
-  
-    return { min:min, max:max, avg:avg };
-  }
 
+    const min = Math.min(...arr);
+    const max = Math.max(...arr);
+    const sum = arr.reduce((acc, val) => acc + val, 0);
+    const avg = sum / arr.length;
+    const avgRounded = avg.toFixed(2);
+
+    return {
+        min: min,
+        max: max,
+        avg: avgRounded
+    };
+}
 //Задача 2
 
 function summElementsWorker(...arr) {
