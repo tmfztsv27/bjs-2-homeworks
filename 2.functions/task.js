@@ -13,7 +13,7 @@ function getArrayParams(...arr) {
     const max = Math.max(...arr);
     const sum = arr.reduce((acc, val) => acc + val, 0);
     const avg = sum / arr.length;
-    const avgRounded = Number(avg.toFixed(2));
+    const avgRounded = +avg.toFixed(2);
 
     return {
         min: min,
