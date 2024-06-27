@@ -21,6 +21,7 @@ function getArrayParams(...arr) {
         avg: avgRounded
     };
 }
+
 //Задача 2
 
 function summElementsWorker(...arr) {
