@@ -1,30 +1,27 @@
 //Задача 1
 
 function getArrayParams(...arr) {
-	let min = Infinity;
-	let max = -Infinity;
-	let sum = 0;
+	if (arr.length === 0) {
+        return {
+            min: undefined,
+            max: undefined,
+            avg: undefined
+        };
+    }
 
-	for (let i = 0; i < arr.length; i++) {
-		if (arr[i] < min) {
-			min = arr[i];
-		}
-		if (arr[i] > max) {
-			max = arr[i];
-		}
-		sum += arr[i];
-	}
+    const min = Math.min(...arr);
+    const max = Math.max(...arr);
+    const avg = arr.reduce((acc, val) => acc + val, 0) / arr.length;
 
-	let avg = (sum / arr.length).toFixed(2);
-
-	return {
-		min,
-		max,
-		avg: +avg
-	};
+    return {
+        min: min,
+        max: max,
+        avg: avg
+    };
 }
 
-console.log(getArrayParams(-10, 5, 10));
+const params = getArrayParams(1, 2, 3, 4, 5);
+console.log(params);
 
 //Задача 2
 
@@ -102,4 +99,3 @@ function makeWork(arrOfArr, func) {
 
 	return maxWorkerResult;
 }
-console.log(makeWork(arr, differenceMaxMinWorker));
