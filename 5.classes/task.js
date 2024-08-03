@@ -138,3 +138,10 @@ class PrintEditionItem {
       return sum / subjects.length;
     }
   }
+  
+// Тестовый сценарий для задач 1 и 2
+const library = new Library("Библиотека имени Ленина");
+
+library.addBook(
+  new DetectiveBook(
+    "Артур К
